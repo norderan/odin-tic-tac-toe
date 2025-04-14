@@ -1,4 +1,8 @@
 
+const html = {
+    cells: document.querySelectorAll(".cell")
+}
+
 
 //factory for player
 const Player = function (mark) {
@@ -7,7 +11,7 @@ const Player = function (mark) {
 
 
 //factory for gameboards
-const GameBoard = function () {
+function GameBoard(){
     let gameBoard = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
     
     const addMark = (mark, location) => {
@@ -45,11 +49,32 @@ const GameBoard = function () {
 }
 
 
-const board1 = GameBoard();
+function GameFlow() {
+    const board = GameBoard();
+    let playerTurnDecider = 0;
 
-board1.addMark("x",0);
-board1.addMark("x",1);
-board1.addMark("x",2);
+    const addTurn = (location) => {
+        if(playerTurnDecider % 2 == 0){
+            if(board.addMark("X",location)){
+                playerTurnDecider++;
+                return true;
+            } else return false;
+        } else {
+            if(board.addMark("O",location)){
+                playerTurnDecider++;
+                return true;
+            } else return false;
+        }
+    }
 
-board1.logBoard()
-console.log(board1.checkForWin("x"))
+    return {addTurn: addTurn,logBoard: board.logBoard};
+}   
+
+
+const gameFlow = GameFlow();
+html.cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+        gameFlow.addTurn(cell.dataset.id);
+        gameFlow.logBoard();
+    });
+});
