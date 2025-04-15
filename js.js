@@ -1,6 +1,7 @@
 
 const html = {
-    cells: document.querySelectorAll(".cell")
+    cells: document.querySelectorAll(".cell"),
+    gameboardDiv: document.getElementById("gameboard")
 }
 
 
@@ -64,17 +65,35 @@ function GameFlow() {
                 playerTurnDecider++;
                 return true;
             } else return false;
+            
         }
     }
 
-    return {addTurn: addTurn,logBoard: board.logBoard};
+    function getTurn() {
+        if(playerTurnDecider % 2 != 0) return "X";
+        else return "O";
+    }
+
+    return {addTurn: addTurn,logBoard: board.logBoard,getTurn: getTurn, checkForWin: board.checkForWin};
 }   
+
+function win() {
+    return true;
+};
 
 
 const gameFlow = GameFlow();
 html.cells.forEach(cell => {
     cell.addEventListener('click', () => {
-        gameFlow.addTurn(cell.dataset.id);
-        gameFlow.logBoard();
+        if(gameFlow.addTurn(cell.dataset.id)){
+            const markInHtml = document.createElement("h1");
+            markInHtml.textContent = gameFlow.getTurn();
+            cell.appendChild(markInHtml);
+            gameFlow.logBoard();
+            console.log(gameFlow.checkForWin(gameFlow.getTurn()));
+            if(gameFlow.checkForWin(gameFlow.getTurn())){
+                win();
+            }
+        }
     });
 });

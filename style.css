@@ -31,6 +31,7 @@ h1{
 .cell {
 
     border: var(--main-color) solid 5px;
+    height: 100px;
 }
 .cell > h1 {
     font-size: 70px;
