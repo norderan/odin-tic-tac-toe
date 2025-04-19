@@ -8,30 +8,36 @@
 
 </head>
 <body>
-    <div id="main-contanier">
-        <div>
-            <div>
+    <div id="out-container">
+        <div id="titles">
+            <h1>Tic-Tac-Toe</h1>
+            <a href="https://github.com/norderan" target="_blank" rel="noopener noreferrer">by Yazan</a>
+        </div>
+        <hr>
+        <div id="main-contanier">
+            <div id="left-div">
+                <h3>start with:</h3>
                 <button id="change-for-x">X</button>
                 <button id="change-for-o">O</button>
             </div>
-        </div>
-        <div id="gameboard">
-            <div data-id="0" class="cell"><h1> </h1></div>
-            <div data-id="1" class="cell"><h1> </h1></div>
-            <div data-id="2" class="cell"><h1> </h1></div>
-            <div data-id="3" class="cell"><h1> </h1></div>
-            <div data-id="4" class="cell" ><h1> </h1></div>
-            <div data-id="5" class="cell"><h1> </h1></div>
-            <div data-id="6" class="cell"><h1> </h1></div>
-            <div data-id="7" class="cell"><h1> </h1></div>
-            <div data-id="8"class="cell"><h1> </h1></div>
-        </div>
-        <div>
-            <div>
-                <h1 id="status">###</h1>
+            <div id="gameboard">
+                <div data-id="0" class="cell"><h1> </h1></div>
+                <div data-id="1" class="cell"><h1> </h1></div>
+                <div data-id="2" class="cell"><h1> </h1></div>
+                <div data-id="3" class="cell"><h1> </h1></div>
+                <div data-id="4" class="cell" ><h1> </h1></div>
+                <div data-id="5" class="cell"><h1> </h1></div>
+                <div data-id="6" class="cell"><h1> </h1></div>
+                <div data-id="7" class="cell"><h1> </h1></div>
+                <div data-id="8"class="cell"><h1> </h1></div>
             </div>
             <div>
-                <button id="start-again">AGAIN</button>
+                <div id="status-div">
+                    <h1 id="status">###</h1>
+                </div>
+                <div>
+                    <button id="start-again">  <img src="images/replay.svg" alt="icon" width="48" height="48" stroke="black"></button>
+                </div>
             </div>
         </div>
     </div>

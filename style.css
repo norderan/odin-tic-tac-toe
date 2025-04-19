@@ -1,29 +1,67 @@
 :root {
     --main-color: #000000;
 }
+
+@font-face {
+    font-family: 'chicago';
+    src: url('fonts/9SYSTEMA.TTF') format('truetype'),
+}
+
+
 * {
     margin: 0;
     padding: 0;
+    font-family: chicago;
+
 }
 body {
+    margin: 0;
+    height: 100vh;
     display: flex;
-}
+    justify-content: center;
+    align-items: center;
+    background-repeat: repeat; /* This makes it tile */
 
+}
+#titles{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+#out-container {
+    border: black solid 5px;
+    border-radius: 30px;
+}
 #main-contanier {
     display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
-    margin-top: 100px;
-    margin-right: 200px;
-    margin-left: 200px;
-    flex: 1;
-    border: var(--main-color) solid 5px;
+    justify-content: center;
     align-items: center;
+
+}
+
+#main-contanier > div {
+    margin: 10px;
+}
+
+#left-div {
+    display: flex;
+    flex-direction: column;
 }
 
 button {
-    height: 50px;
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: black solid 3px;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 3rem;
+
 }
 h1{
     text-align: center;
@@ -33,15 +71,40 @@ h1{
     align-items: center;
     justify-content: center;
     grid-template: repeat(3, 100px) / repeat(3, 100px);
-    margin:5px;
+    gap: 5px;
     
 }
 
 .cell {
-
-    border: var(--main-color) solid 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-sizing: border-box;
+    border: 3px solid var(--main-color);  
+    border-radius: 20px;
     height: 100px;
 }
+
 .cell > h1 {
-    font-size: 70px;
+    font-size: 4rem;
+}
+
+#status {
+    font-size: 1.5rem;
+    border: 3spx solid var(--main-color);  
+    border-radius: 20px;
+}
+
+
+
+hr {
+    height: 5px;          /* thickness */
+    background-color: black;
+    border: none;
+}
+
+a {
+    color: black;
+    ;
 }

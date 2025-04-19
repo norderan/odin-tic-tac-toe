@@ -1,26 +1,3 @@
-/*
----Project steps:
-    - Get working no fancy ui.
-    - add ui
-
-
-
-    - add fancy ui
-
-
-
-
-
-
-
-
-
-
-
-*/
-
-
-
 
 const html = {
     cells: document.querySelectorAll(".cell"),
@@ -148,7 +125,7 @@ html.cells.forEach(cell => {
             if(gameFlow.checkForWin(gameFlow.getTurn())){
                 console.log(`"${gameFlow.getTurn()}" have one!`);
                 allowPlayingFlag = false;
-                html.status.textContent = `"${gameFlow.getTurn()}" WON`;
+                html.status.textContent = `${gameFlow.getTurn()} WON`;
             }
             if(gameFlow.checkForTie()){
                 html.status.textContent = `TIE`; 
